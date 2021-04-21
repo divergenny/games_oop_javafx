@@ -26,6 +26,14 @@ public enum Cell {
         return y;
     }
 
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
     public static Cell findBy(int x, int y) {
         Cell rsl = null;
         for (Cell cell : values()) {

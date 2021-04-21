@@ -4,7 +4,7 @@ import ru.job4j.puzzle.firuges.Cell;
 import ru.job4j.puzzle.firuges.Figure;
 import java.util.Arrays;
 
-public class Logic {
+public class Logic  {
     private final int size;
     private final Figure[] figures;
     private int index = 0;
@@ -18,7 +18,7 @@ public class Logic {
         figures[index++] = figure;
     }
 
-    public boolean move(Cell source, Cell dest) {
+    public boolean move(Cell source, Cell dest)  {
         boolean rst = false;
         int index = findBy(source);
         if (index != -1) {

@@ -67,6 +67,24 @@ public final class Chess extends Application {
                                 findBy(event.getX(), event.getY()));
                         rect.setX(((int) event.getX() / 40) * 40 + 5);
                         rect.setY(((int) event.getY() / 40) * 40 + 5);
+                    } catch (ImpossibleMoveException ime) {
+                        Alert info = new Alert(Alert.AlertType.ERROR);
+                        info.setContentText("Пользователь двигает фигуру не по правилам шахмат!");
+                        info.show();
+                        rect.setX(((int) momento.getX() / 40) * 40 + 5);
+                        rect.setY(((int) momento.getY() / 40) * 40 + 5);
+                    } catch (FigureNotFoundException fnfe) {
+                        Alert info = new Alert(Alert.AlertType.ERROR);
+                        info.setContentText("Фигуры нет на клетке!");
+                        info.show();
+                        rect.setX(((int) momento.getX() / 40) * 40 + 5);
+                        rect.setY(((int) momento.getY() / 40) * 40 + 5);
+                    } catch (OccupiedCellException oce) {
+                        Alert info = new Alert(Alert.AlertType.ERROR);
+                        info.setContentText("Ячейка занята!");
+                        info.show();
+                        rect.setX(((int) momento.getX() / 40) * 40 + 5);
+                        rect.setY(((int) momento.getY() / 40) * 40 + 5);
                     } catch (Exception e) {
                         Alert info = new Alert(Alert.AlertType.ERROR);
                         info.setContentText(e.getClass().getName() +  " "  + e.getMessage());
